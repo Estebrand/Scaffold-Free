@@ -1,0 +1,16 @@
+
+
+<div style="margin:50px;">
+	<h1>Product Input</h1>
+	<h3>Create a Product</h3>
+	<%= form_for(@product, url:product_path, method: :patch) do |f| %>
+			<%= f.text_field :name, value: @product.name %><br />
+			<%= f.number_field :price, value: @product.price %><br />
+			<%= f.number_field :quantity, value: @product.quantity %><br />
+			<%= f.hidden_field :id, value: @product.id %>
+
+			<%= f.submit %>
+	<% end %>
+
+	<p><%= link_to "All Products", products_path %></p>
+</div>

@@ -1,0 +1,22 @@
+<div style="margin:50px";>
+
+	<h1> All Users</h1>
+
+	<table >
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+
+		<% @users.each do |user| %>
+				<tr>
+					<td><%= link_to user.name, show_user_path(id: user.id) %></td>
+					<td><%= user.age %></td>
+				</tr>
+		<% end %>
+	</table>
+
+	<p>
+		<%= link_to "Return to Index", root_path %>
+	</p>
+</div>
